@@ -1,0 +1,386 @@
+{
+  "modules": [
+    {
+      "id": 2090432304,
+      "voltage": "high",
+      "name": "Solar Plant",
+      "configurations": [
+        {
+          "type": 8,
+          "value": 500
+        }
+      ]
+    },
+    {
+      "id": 441033275,
+      "voltage": "high",
+      "name": "Wind Park",
+      "configurations": [
+        {
+          "type": 4,
+          "value": 500
+        }
+      ]
+    },
+    {
+      "id": 448705851,
+      "voltage": "high",
+      "name": "Power Plant",
+      "configurations": [
+        {
+          "type": 9,
+          "value": 500
+        }
+      ]
+    },
+    {
+      "id": 1947443573,
+      "voltage": "medium",
+      "name": "Wind park",
+      "configurations": [
+        {
+          "type": 5,
+          "value": 300
+        }
+      ]
+    },
+    {
+      "id": 446343995,
+      "voltage": "medium",
+      "name": "Storage",
+      "configurations": [
+        {
+          "type": 10,
+          "value": 200
+        },
+        {
+          "type": 11,
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": 444756283,
+      "voltage": "medium",
+      "name": "Factory 1",
+      "configurations": [
+        {
+          "type": 7,
+          "value": 300
+        }
+      ]
+    },
+    {
+      "id": 1945520896,
+      "voltage": "medium",
+      "name": "Factory 2",
+      "configurations": [
+        {
+          "type": 12,
+          "value": 240
+        },
+        {
+          "type": 7,
+          "value": 300
+        }
+      ]
+    },
+    {
+      "id": 1947426314,
+      "voltage": "medium",
+      "name": "Factory 3",
+      "configurations": [
+        {
+          "type": 5,
+          "value": 200
+        },
+        {
+          "type": 7,
+          "value": 300
+        }
+      ]
+    },
+    {
+      "id": 2598132291,
+      "voltage": "medium",
+      "name": "Factory 4",
+      "configurations": [
+        {
+          "type": 5,
+          "value": 200
+        },
+        {
+          "type": 7,
+          "value": 300
+        }
+      ]
+    },
+    {
+      "id": 2090677472,
+      "voltage": "low",
+      "name": "Residential Area 1",
+      "configurations": [
+        {
+          "type": 2,
+          "value": 70
+        },
+        {
+          "type": 6,
+          "value": 0
+        }
+      ]
+    },
+    {
+      "id": 1945556720,
+      "voltage": "low",
+      "name": "Residential Area 2",
+      "configurations": [
+        {
+          "type": 2,
+          "value": 20
+        },
+        {
+          "type": 6,
+          "value": 40
+        }
+      ]
+    },
+    {
+      "id": 1945746272,
+      "voltage": "low",
+      "name": "Residential Area 3",
+      "configurations": [
+        {
+          "type": 2,
+          "value": 20
+        },
+        {
+          "type": 6,
+          "value": 20
+        }
+      ]
+    },
+    {
+      "id": 439742523,
+      "voltage": "low",
+      "name": "Residential Area 4",
+      "configurations": [
+        {
+          "type": 2,
+          "value": 20
+        },
+        {
+          "type": 6,
+          "value": 20
+        }
+      ]
+    },
+    {
+      "id": 1946118352,
+      "voltage": "low",
+      "name": "Residential Area 5",
+      "configurations": [
+        {
+          "type": 1,
+          "value": 20
+        },
+        {
+          "type": 2,
+          "value": 20
+        },
+        {
+          "type": 3,
+          "value": 50
+        }
+      ]
+    },
+    {
+      "id": 1946006704,
+      "voltage": "low",
+      "name": "Residential Area 6",
+      "configurations": [
+        {
+          "type": 1,
+          "value": 20
+        },
+        {
+          "type": 2,
+          "value": 20
+        },
+        {
+          "type": 3,
+          "value": 50
+        }
+      ]
+    }
+  ],
+  "importModules": [
+    {
+      "voltage": "high",
+      "id": 451852347,
+      "name": "Import Export"
+    }
+  ],
+  "transformers": [
+    {
+      "id": 1945699104,
+      "linked": 1947440355,
+      "name": "Transformer LV-MV: Low",
+      "voltage": "low"
+    },
+    {
+      "id": 1947440355,
+      "linked": 1945699104,
+      "name": "Transformer LV-MV: Medium",
+      "voltage": "medium"
+    },
+    {
+      "id": 2119985872,
+      "linked": 3038072891,
+      "name": "Transformer LV-MV: Low",
+      "voltage": "low"
+    },
+    {
+      "id": 3038072891,
+      "linked": 2119985872,
+      "name": "Transformer LV-MV: Medium",
+      "voltage": "medium"
+    },
+    {
+      "id": 2091095888,
+      "linked": 2090795360,
+      "name": "Transformer HV-MV: High",
+      "voltage": "high"
+    },
+    {
+      "id": 2090795360,
+      "linked": 2091095888,
+      "name": "Transformer HV-MV: Medium",
+      "voltage": "medium"
+    }
+  ],
+  "wireModules": [
+    {
+      "id": 1946402208,
+      "linked": 1946406912,
+      "name": "Low Voltage Wire",
+      "voltage": "low"
+    },
+    {
+      "id": 1946406912,
+      "linked": 1946402208,
+      "name": "Low Voltage Wire",
+      "voltage": "low"
+    },
+    {
+      "id": 1946157904,
+      "linked": 443579467,
+      "name": "Low Voltage Wire",
+      "voltage": "low"
+    },
+    {
+      "id": 443579467,
+      "linked": 1946157904,
+      "name": "Low Voltage Wire",
+      "voltage": "low"
+    }
+  ],
+  "configTypes": [
+    {
+      "name": "Electric Car",
+      "min": 0,
+      "max": 50,
+      "role": "consumption",
+      "voltage": "low",
+      "id": 1
+    },
+    {
+      "name": "Household Machinery",
+      "min": 0,
+      "max": 120,
+      "role": "consumption",
+      "voltage": "low",
+      "id": 2
+    },
+    {
+      "name": "Solar Panel",
+      "min": 0,
+      "max": 100,
+      "role": "production",
+      "voltage": "low",
+      "id": 3
+    },
+    {
+      "name": "Wind Turbine",
+      "min": 0,
+      "max": 1000,
+      "role": "production",
+      "voltage": "high",
+      "id": 4
+    },
+    {
+      "name": "Wind Turbine",
+      "min": 0,
+      "max": 500,
+      "role": "production",
+      "voltage": "medium",
+      "id": 5
+    },
+    {
+      "name": "Wind Turbine",
+      "min": 0,
+      "max": 100,
+      "role": "production",
+      "voltage": "low",
+      "id": 6
+    },
+    {
+      "name": "Heavy Machinery",
+      "min": 0,
+      "max": 450,
+      "role": "consumption",
+      "voltage": "medium",
+      "id": 7
+    },
+    {
+      "name": "Solar Panel",
+      "min": 0,
+      "max": 700,
+      "role": "production",
+      "voltage": "high",
+      "id": 8
+    },
+    {
+      "name": "Generator",
+      "min": 0,
+      "max": 1200,
+      "role": "production",
+      "voltage": "high",
+      "id": 9
+    },
+    {
+      "name": "Storage Input",
+      "min": 0,
+      "max": 200,
+      "role": "consumption",
+      "voltage": "medium",
+      "id": 10
+    },
+    {
+      "name": "Storage Output",
+      "min": 0,
+      "max": 200,
+      "role": "production",
+      "voltage": "medium",
+      "id": 11
+    },
+    {
+      "name": "Solar Panel",
+      "min": 0,
+      "max": 400,
+      "role": "production",
+      "voltage": "medium",
+      "id": 12
+    }
+  ]
+}

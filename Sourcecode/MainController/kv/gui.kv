@@ -1,0 +1,291 @@
+<TableSectionOverviewScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            padding: 10
+            size_hint: (1, .2)
+            Label:
+                size_hint: (.6, 1)
+                font_size: 30
+                halign: 'left'
+                valign: 'middle'
+                text_size: self.size
+                text: 'Smart Grid Table'
+            Button:
+                text: 'Exit'
+                on_press: root.gui.shutdown_app()
+                size_hint: (.2, 1)
+            Button:
+                text: 'Settings'
+                on_press: root.manager.current = 'ConfigurationScreen'
+                size_hint: (.2, 1)
+                on_press:
+                    root.manager.transition.direction = 'left'
+        FloatLayout:
+            size: (800,480)
+            id: grid
+
+<ModuleOverviewScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            padding: 10
+            size_hint: (1, .2)
+            Label:
+                id: table_section_label
+                size_hint: (.8, 1)
+                font_size: 30
+                halign: 'left'
+                valign: 'middle'
+                text_size: self.size
+                text: 'Table Section x'
+            Button:
+                text: 'Back'
+                on_press: root.manager.current = 'TableSectionOverviewScreen'
+                size_hint: (.2, 1)
+                on_press:
+                    root.manager.transition.direction = 'right'
+        FloatLayout:
+            size: (800,480)
+            id: grid
+
+<ModuleConfigurationScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            padding: 10
+            size_hint: (1, .2)
+            Label:
+                id: module_label
+                size_hint: (.8, 1)
+                font_size: 30
+                halign: 'left'
+                valign: 'middle'
+                text_size: self.size
+                text: 'Module x'
+            Button:
+                text: 'Back'
+                on_press: root.manager.current = 'ModuleOverviewScreen'
+                size_hint: (.2, 1)
+                on_press:
+                    root.manager.transition.direction = 'right'
+        BoxLayout:
+            id: grid
+            padding: 10
+            orientation: 'vertical'
+            GridLayout:
+                cols: 2
+                Label:
+                    id: voltage_label
+                    font_size: 22
+            Label:
+                text: 'Production'
+                font_size: 22
+            GridLayout:
+                cols: 5
+                id: production_grid
+            Label:
+                text: 'Consumption'
+                font_size: 22
+            GridLayout:
+                cols: 5
+                id: consumption_grid
+
+
+<ConfigurationScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            padding: 10
+            size_hint: (1, .2)
+            Label:
+                size_hint: (.8, 1)
+                font_size: 30
+                halign: 'left'
+                valign: 'middle'
+                text_size: self.size
+                text: 'Settings'
+            Button:
+                text: 'Back'
+                on_press: root.manager.current = 'TableSectionOverviewScreen'
+                size_hint: (.2, 1)
+                on_press:
+                    root.manager.transition.direction = 'right'
+        BoxLayout:
+            padding: 10
+            size_hint: (1, .26)
+            orientation: 'horizontal'
+            ColorChangeButton:
+                text: 'Change low voltage color'
+                on_press: root.gui.show_color_change_screen(self)
+                size_hint: (.2, 1)
+                color_id: 'vlow'
+                on_press:
+                    root.manager.transition.direction = 'left'
+            ColorChangeButton:
+                text: 'Change medium voltage color'
+                on_press: root.gui.show_color_change_screen(self)
+                size_hint: (.2, 1)
+                color_id: 'vmedium'
+                on_press:
+                    root.manager.transition.direction = 'left'
+            ColorChangeButton:
+                text: 'Change high voltage color'
+                on_press: root.gui.show_color_change_screen(self)
+                size_hint: (.2, 1)
+                color_id: 'vhigh'
+                on_press:
+                    root.manager.transition.direction = 'left'
+        BoxLayout:
+            padding: 10
+            size_hint: (1, .26)
+            orientation: 'horizontal'
+            ColorChangeButton:
+                text: 'Change normal load color'
+                on_press: root.gui.show_color_change_screen(self)
+                size_hint: (.2, 1)
+                color_id: 'lnormal'
+                on_press:
+                    root.manager.transition.direction = 'left'
+            ColorChangeButton:
+                text: 'Change high load color'
+                on_press: root.gui.show_color_change_screen(self)
+                size_hint: (.2, 1)
+                color_id: 'lhigh'
+                on_press:
+                    root.manager.transition.direction = 'left'
+            ColorChangeButton:
+                text: 'Change critical load color'
+                on_press: root.gui.show_color_change_screen(self)
+                size_hint: (.2, 1)
+                color_id: 'lcritical'
+                on_press:
+                    root.manager.transition.direction = 'left'
+        BoxLayout:
+            padding: 10
+            size_hint: (1, .26)
+            orientation: 'horizontal'
+            Button:
+                text: 'Reboot'
+                on_press: root.gui.reboot_tables()
+                size_hint: (.2, 1)
+            Button:
+                text: 'Disable buzzer'
+                on_press: root.gui.disable_buzzer()
+                size_hint: (.2, 1)
+            Button:
+                text: 'Enable buzzer'
+                on_press: root.gui.enable_buzzer()
+                size_hint: (.2, 1)
+
+
+<ColorChangeScreen>:
+    bg_color_live: 0.5, 0.5, 0.5
+    canvas.before:
+		Color:
+			rgb: root.bg_color_live
+		Rectangle:
+			pos: root.pos
+			size: root.size
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            padding: 10
+            size_hint: (1, .2)
+            Label:
+                size_hint: (.8, 1)
+                font_size: 30
+                halign: 'left'
+                valign: 'middle'
+                text_size: self.size
+                text: 'COLOR CHANGE SCREEN'
+                id: screen_title
+            Button:
+                text: 'Back'
+                on_press: root.manager.current = 'ConfigurationScreen'
+                size_hint: (.2, 1)
+                on_press:
+                    root.manager.transition.direction = 'right'
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 0.3
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            padding: 10
+            size_hint: (1, .2)
+            Label:
+                text: 'R'
+                size_hint: (.2, 1)
+            Label:
+                text: '0'
+                size_hint: (.2, 1)
+            Slider:
+                id: R
+                value: 0.1
+                range: (0,1)
+                on_value: root.bg_color_live[0] = self.value
+            Label:
+                text: '255'
+                size_hint: (.2, 1)
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 0.3
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            padding: 10
+            size_hint: (1, .2)
+            Label:
+                text: 'G'
+                size_hint: (.2, 1)
+            Label:
+                text: '0'
+                size_hint: (.2, 1)
+            Slider:
+                id: G
+                value: 0.1
+                range: (0,1)
+                on_value: root.bg_color_live[1] = self.value
+            Label:
+                text: '255'
+                size_hint: (.2, 1)
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 0.3
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            padding: 10
+            size_hint: (1, .2)
+            Label:
+                text: 'B'
+                size_hint: (.2, 1)
+            Label:
+                text: '0'
+                size_hint: (.2, 1)
+            Slider:
+                id: B
+                value: 0.1
+                range: (0,1)
+                on_value: root.bg_color_live[2] = self.value
+            Label:
+                text: '255'
+                size_hint: (.2, 1)
+                size_hint: (.2, 1)
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 0.3
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            padding: 10
+            size_hint: (1, .2)
+            Button:
+                text: 'Confirm'
+                on_press: root.confirm_color()
+                size_hint: (.2, 1)

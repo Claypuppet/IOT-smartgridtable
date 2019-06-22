@@ -1,0 +1,50 @@
+{
+	"tableParts": [{ 
+		"id": 1,
+		"type": 1,
+		"connections": {
+			"north": 	2090825840,
+			"south": 	2090870208
+		}
+	},{ 
+		"id": 2,
+		"type": 1,
+		"connections": {
+			"north": 	1945993616,
+			"south": 	2597787091
+		}
+	},{ 
+		"id": 3,
+		"type": 1,
+		"connections": {
+			"north": 	3038573787,
+			"south": 	446214715
+		}
+	},{ 
+		"id": 4,
+		"type": 1,
+		"connections": {
+			"north": 	2090854272,
+			"south": 	2090275872
+		}
+	},{  
+		"id": 5,
+		"type": 1,
+		"connections": {
+			"north": 	442147403,
+			"south": 	1696811920
+		}
+	},{ 
+		"id": 6,
+		"type": 1,
+		"connections": {
+			"north": 	2090512432,
+			"south": 	446497355
+		}
+	},{ 
+		"id": 7,
+		"type": 1,
+		"connections": {
+		}
+	}]
+}
